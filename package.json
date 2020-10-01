@@ -9,6 +9,7 @@
     "watch:js": "tsc -w",
     "check-types": "tsc --noEmit",
     "format": "prettier --write 'src/**/*.{js,ts,css,scss,json}'",
+    "format:static": "prettier --write 'src/**/*.{json,html}'",
     "eslint": "eslint src/**/*.ts",
     "eslint:fix": "eslint src/**/*.ts --fix",
     "lint": "npm-run-all -p eslint check-types",
