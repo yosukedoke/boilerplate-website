@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npm-run-all -p watch:* serve",
+    "start": "npm-run-all -p watch serve",
     "serve": "browser-sync start -c ./bs-config.js",
-    "build": "npm-run-all build:*",
+    "build": "npm-run-all lint:fix format build:*",
     "build:js": "tsc",
     "build:css": "postcss -c postcss.config.js 'src/**/!(_)*.pcss' --base src -d dist --ext css --no-map",
-    "watch": "npm-run-all watch:*",
+    "watch": "npm-run-all -p watch:*",
     "watch:js": "tsc -w",
     "watch:css": "postcss -c postcss.config.js 'src/**/!(_)*.pcss' --base src -d dist --ext css --watch",
     "check-types": "tsc --noEmit",
-    "format": "prettier --write 'src/**/*.{js,ts,css,scss,json}'",
+    "format": "prettier --write 'src/**/*.{js,ts,css,pcss,json,html}'",
     "format:static": "prettier --write 'src/**/*.{json,html}'",
     "eslint": "eslint src/**/*.ts",
     "eslint:fix": "eslint src/**/*.ts --fix",
@@ -52,6 +52,6 @@
   "lint-staged": {
     "src/**/*.{js,ts}": "eslint --cache --fix",
     "src/**/*.{css,pcss}": "stylelint --cache --fix",
-    "src/**/*.{js,ts,css,scss,json}": "prettier --write"
+    "src/**/*.{js,ts,css,pcss,json,html}": "prettier --write"
   }
 }
