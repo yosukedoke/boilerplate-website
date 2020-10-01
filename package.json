@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "browser-sync start -c ./bs-config.js",
+    "start": "npm run watch:js & npm run serve",
+    "serve": "browser-sync start -c ./bs-config.js",
     "build:js": "tsc",
     "watch:js": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
