@@ -34,12 +34,23 @@ npm run build
 * Format all files.
 * Generate or copy files from `src` to `dist`.
 
+## Lint
+
+```
+npm run lint
+```
+
+## [TODO]Test
+
+```
+npm run test
+```
+
 ## Pre-comit hock
 
 * Type check with tsc
 * Lint with ESLint and StyleLint
 * Format with prettier
-
 
 ## TODO
 
