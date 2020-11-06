@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm-run-all -p watch serve",
     "serve": "browser-sync start -c ./bs-config.js",
-    "build": "npm-run-all lint:fix format build:*",
+    "build": "npm-run-all lint_fix format build:*",
     "build:static": "cpx -C 'src/**/*.{html,json,png,jpeg,jpg,svg,gif,webp}' dist",
     "build:js": "npm run rimraf dist/**/*.js && tsc",
     "build:css": "npm run rimraf dist/**/*.css && postcss -c postcss.config.js 'src/**/!(_)*.pcss' --base src -d dist --ext css --no-map",
@@ -16,11 +16,11 @@
     "check-types": "tsc --noEmit",
     "format": "prettier --write 'src/**/*.{js,ts,css,pcss,json,html}'",
     "eslint": "eslint src/**/*.ts",
-    "eslint:fix": "eslint src/**/*.ts --fix",
+    "eslint_fix": "eslint src/**/*.ts --fix",
     "stylelint": "stylelint 'src/**/*.{css,scss,sass,pcss}'",
-    "stylelint:fix": "stylelint 'src/**/*.{css,pcss}' --fix",
+    "stylelint_fix": "stylelint 'src/**/*.{css,pcss}' --fix",
     "lint": "npm-run-all -p eslint check-types stylelint",
-    "lint:fix": "npm-run-all -p eslint:fix check-types stylelint:fix",
+    "lint_fix": "npm-run-all -p eslint_fix check-types stylelint_fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
