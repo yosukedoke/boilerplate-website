@@ -23,9 +23,6 @@
     "lint:fix": "npm-run-all -p eslint:fix check-types stylelint:fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "watch": {
-    "build:static": "src/**/*.{html,json,png,jpeg,jpg,svg,gif,webp}"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
