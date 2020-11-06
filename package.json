@@ -15,13 +15,12 @@
     "watch:css": "postcss -c postcss.config.js 'src/**/!(_)*.pcss' --base src -d dist --ext css --watch",
     "check-types": "tsc --noEmit",
     "format": "prettier --write 'src/**/*.{js,ts,css,pcss,json,html}'",
-    "format:static": "prettier --write 'src/**/*.{json,html}'",
     "eslint": "eslint src/**/*.ts",
     "eslint:fix": "eslint src/**/*.ts --fix",
     "stylelint": "stylelint 'src/**/*.{css,scss,sass,pcss}'",
     "stylelint:fix": "stylelint 'src/**/*.{css,pcss}' --fix",
     "lint": "npm-run-all -p eslint check-types stylelint",
-    "lint:fix": "npm-run-all eslint:fix check-types stylelint:fix format",
+    "lint:fix": "npm-run-all -p eslint:fix check-types stylelint:fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "watch": {
