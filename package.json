@@ -6,11 +6,11 @@
     "start": "npm-run-all -p watch serve",
     "serve": "browser-sync start -c ./bs-config.js",
     "build": "npm-run-all lint:fix format build:*",
-    "build:html": "cpx -C 'src/**/*.{html,json,png,jpeg,jpg,svg,gif,webp}' dist",
+    "build:static": "cpx -C 'src/**/*.{html,json,png,jpeg,jpg,svg,gif,webp}' dist",
     "build:js": "npm run rimraf dist/**/*.js && tsc",
     "build:css": "npm run rimraf dist/**/*.css && postcss -c postcss.config.js 'src/**/!(_)*.pcss' --base src -d dist --ext css --no-map",
     "watch": "npm-run-all -p watch:*",
-    "watch:html": "cpx -w 'src/**/*.{html,json,png,jpeg,jpg,svg,gif,webp}' dist",
+    "watch:static": "cpx -w 'src/**/*.{html,json,png,jpeg,jpg,svg,gif,webp}' dist",
     "watch:js": "tsc -w",
     "watch:css": "postcss -c postcss.config.js 'src/**/!(_)*.pcss' --base src -d dist --ext css --watch",
     "check-types": "tsc --noEmit",
@@ -24,7 +24,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "watch": {
-    "build:html": "src/**/*.{html,json,png,jpeg,jpg,svg,gif,webp}"
+    "build:static": "src/**/*.{html,json,png,jpeg,jpg,svg,gif,webp}"
   },
   "author": "",
   "license": "ISC",
